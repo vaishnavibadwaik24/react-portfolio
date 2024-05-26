@@ -1,5 +1,6 @@
 import React from 'react'
 import img1 from './img1.svg';
+import { TypeAnimation } from 'react-type-animation';
 
 export default function portfolio() {
     const projectsData = [
@@ -48,8 +49,28 @@ export default function portfolio() {
                 <img className="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero" src={img1} style={{width: "150px", height: "150px"}} />
                 <div className="text-center lg:w-2/3 w-full">
                   <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-black">Hi, I'm Vaishnavi</h1>
-                  <p className="mb-8 text-2xl text-slate-300 leading-relaxed">I am a web developer specializing in frontend development. Welcome to my portfolio!</p>
-                  <div className="flex justify-center">
+                  <TypeAnimation
+                    sequence={[
+                        'I',
+                        500,
+                        'I am a',
+                        500,
+                        'I am a web developer', 
+                        500,
+                        'I am a web developer specializing',
+                        500,
+                        'I am a web developer specializing in',
+                        500,
+                        'I am a web developer specializing in frontend development.',
+                        500,
+                        'I am a web developer specializing in frontend development.\nWelcome to my portfolio!',
+                        500,
+                    ]}
+                    style={{ fontSize: "1.5rem", color: "#cbd5e1", whiteSpace: 'pre-line'  }}
+                    repeat={Infinity}
+                    />
+                 
+                  <div className="flex justify-center pt-10">
                     <a href="#Page2" className="inline-flex text-white bg-fuchsia-500 border-0 py-2 px-6 focus:outline-none hover:bg-fuchsia-600 rounded text-lg">Learn More</a>
                   </div>
                 </div>
