@@ -49,27 +49,19 @@ export default function portfolio() {
               <div className="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
                 <img className="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero" src={img1} style={{width: "150px", height: "160px"}} />
                 <div className="text-center lg:w-2/3 w-full">
-                  <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-black">Hi, I'm Vaishnavi</h1>
+                  <h1 className="title-font sm:text-4xl text-2xl mb-4 font-medium text-black">Hi, I'm Vaishnavi</h1>
                   <TypeAnimation
                     sequence={[
-                        'I',
-                        500,
-                        'I am a',
-                        500,
-                        'I am a web developer', 
-                        500,
-                        'I am a web developer specializing',
-                        500,
-                        'I am a web developer specializing in',
-                        500,
-                        'I am a web developer specializing in frontend development.',
-                        500,
-                        'I am a web developer specializing in frontend development.\nWelcome to my portfolio!',
-                        500,
+                        'Full Stack Developer', 
+                        1000,
+                        'Laravel Developer',
+                        1000,
                     ]}
-                    style={{ fontSize: "1.5rem", color: "#cbd5e1", whiteSpace: 'pre-line'  }}
+                    style={{ fontSize: "2rem", color: "#cbd5e1", whiteSpace: 'pre-line'  }}
                     repeat={Infinity}
                     />       
+                    {/* <p className="mb-8 text-2xl text-slate-300 leading-relaxed">Specializing in frontend development.</p> */}
+
                   <div className="flex justify-center pt-10">
                     <a href="#Page2" className="inline-flex text-white bg-fuchsia-500 border-0 py-2 px-6 focus:outline-none hover:bg-fuchsia-600 rounded text-lg">Learn More</a>
                   </div>
@@ -106,10 +98,10 @@ export default function portfolio() {
     
           {/* Skills Section */}
           <div id="Page3" className="section">
-            <section className="text-gray-600 body-font">
+            <section className="text-gray-600 bg-fuchsia-950 body-font">
               <div className="container px-5 py-24 mx-auto">
                 <div className="text-center mb-20">
-                  <h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4">Skills</h1>
+                  <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-black mb-4">Technical Skills</h1>
                 </div>
                 <div className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
                   <div className="p-2 sm:w-1/2 w-full">
