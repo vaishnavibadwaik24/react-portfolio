@@ -1,5 +1,6 @@
 import React from 'react'
 import img1 from './img1.svg';
+import resume from './resume.pdf';
 import { TypeAnimation } from 'react-type-animation';
 
 export default function portfolio() {
@@ -46,7 +47,7 @@ export default function portfolio() {
           <div id="Page1" className="section">
             <section className="text-gray-600 body-font bg-fuchsia-950">
               <div className="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
-                <img className="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero" src={img1} style={{width: "150px", height: "150px"}} />
+                <img className="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero" src={img1} style={{width: "150px", height: "160px"}} />
                 <div className="text-center lg:w-2/3 w-full">
                   <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-black">Hi, I'm Vaishnavi</h1>
                   <TypeAnimation
@@ -68,8 +69,7 @@ export default function portfolio() {
                     ]}
                     style={{ fontSize: "1.5rem", color: "#cbd5e1", whiteSpace: 'pre-line'  }}
                     repeat={Infinity}
-                    />
-                 
+                    />       
                   <div className="flex justify-center pt-10">
                     <a href="#Page2" className="inline-flex text-white bg-fuchsia-500 border-0 py-2 px-6 focus:outline-none hover:bg-fuchsia-600 rounded text-lg">Learn More</a>
                   </div>
@@ -80,14 +80,25 @@ export default function portfolio() {
     
           {/* About Section */}
           <div id="Page2" className="section">
-            <section className="text-gray-600 body-font">
+            <section className="text-gray-600 body-font bg-fuchsia-950">
               <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-                <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
-                  <img className="object-cover object-center rounded" alt="hero" src="about.jpg" />
-                </div>
+                {/* <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-15 md:mb-0"> */}
+                <h2 class="sm:text-3xl text-2xl text-fuchsia-700 font-medium title-font mb-2 md:w-2/5">I create websites for your
+          business.</h2>    
+                {/* </div> */}
                 <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-                  <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">About Me</h1>
-                  <p className="mb-8 leading-relaxed">I am a passionate developer with experience in creating dynamic and responsive websites using modern web technologies.</p>
+                  <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-black">About Me</h1>
+                  <p className="mb-8 text-slate-300 leading-relaxed">As a final semester MCA student with a keen interest in Web Development,
+            I possess a foundational understanding of Object-Oriented Programming (OOPs) concepts. Eager to apply and
+            enhance my skills, I am actively seeking entry-level opportunities to contribute to real-world projects and
+            expand my knowledge in the dynamic field of computer science.</p>
+            <div class="flex md:mt-4 mt-6">
+            <a href={resume} target="_blank" rel="noopener noreferrer">
+            <div className="inline-flex text-white bg-fuchsia-500 border-0 py-1 px-4 focus:outline-none hover:bg-fuchsia-600 rounded">
+                View Resume
+            </div>
+            </a>
+          </div>
                 </div>
               </div>
             </section>
