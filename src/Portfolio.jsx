@@ -1,27 +1,33 @@
 import React from "react";
-import img1 from "./img1.svg";
 import resume from "./resume.pdf";
+import view from "./view.png";
 import { TypeAnimation } from "react-type-animation";
 
 export default function portfolio() {
   const projectsData = [
     {
-      title: "Project One",
+      title: "Dine Out | Restro & Cafe",
       description: "Description of Project One.",
-      image: "project1.jpg",
-      link: "https://example.com/project1",
+      image: "g3.png",
+      link: "https://dine-out-restro.netlify.app/",
     },
     {
-      title: "Project Two",
+      title: "ManaliTour",
       description: "Description of Project Two.",
-      image: "project2.jpg",
-      link: "https://example.com/project2",
+      image: "g1.png",
+      link: "https://manali-tour.netlify.app/",
     },
     {
-      title: "Project Three",
+      title: "whitefalcon Publishing",
+      description: "Description of Project Three.",
+      image: "g2.png",
+      link: "https://whitefalcon.netlify.app/",
+    },
+    {
+      title: "Adilqadri",
       description: "Description of Project Three.",
       image: "project3.jpg",
-      link: "https://example.com/project3",
+      link: "https://main--adilqadri-clone.netlify.app/",
     },
   ];
 
@@ -57,15 +63,9 @@ export default function portfolio() {
       <div id="Home" className="section">
         <section className="text-gray-600 body-font bg-fuchsia-950">
           <div className="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
-            <img
-              className="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded"
-              alt="hero"
-              src={img1}
-              style={{ width: "150px", height: "160px" }}
-            />
             <div className="text-center lg:w-2/3 w-full">
-              <h1 className="title-font sm:text-4xl text-2xl mb-4 font-medium text-black">
-                Hi, I'm Vaishnavi
+              <h1 className="title-font italic hover:not-italic sm:text-5xl text-4xl mb-4 font-medium text-black">
+                Vaishnavi Badwaik
               </h1>
               <TypeAnimation
                 sequence={[
@@ -82,9 +82,9 @@ export default function portfolio() {
               <div className="flex justify-center pt-10">
                 <a
                   href="#About"
-                  className="inline-flex text-white bg-fuchsia-500 border-0 py-2 px-6 focus:outline-none hover:bg-fuchsia-600 rounded text-lg"
+                  className="inline-flex text-white bg-gradient-to-r from-fuchsia-600 to-fuchsia-300 ... border-0 py-1 px-8 focus:outline-none  rounded text-lg"
                 >
-                  Learn More
+                  Work ?
                 </a>
               </div>
             </div>
@@ -113,10 +113,16 @@ export default function portfolio() {
                 opportunities to contribute to real-world projects and expand my
                 knowledge in the dynamic field of computer science.
               </p>
-              <div class="flex md:mt-4 mt-6">
+              <div className="flex md:mt-4 mt-6">
                 <a href={resume} target="_blank" rel="noopener noreferrer">
-                  <div className="inline-flex text-white bg-fuchsia-500 border-0 py-1 px-4 focus:outline-none hover:bg-fuchsia-600 rounded">
-                    View Resume
+                  <div  
+                    className="inline-flex items-center text-white border-0 px-5 focus:outline-none rounded bg-gradient-to-r from-fuchsia-600 to-fuchsia-300 ... ">
+                    <div 
+                      style={{ width: "50px", height: "40px" }} 
+                      className="flex items-center justify-center">
+                      <img src={view} style={{ width: "30px", height: "20px" }} alt="Eye Icon" />
+                    </div>
+                    <span className="mr-3 text-lg">View CV</span>
                   </div>
                 </a>
               </div>
@@ -272,8 +278,8 @@ export default function portfolio() {
                   </div>
                 </div>
                 <div className="p-2 w-full">
-                  <button className="flex mx-auto text-white bg-fuchsia-500 border-0 py-2 px-8 focus:outline-none hover:bg-fuchsia-600 rounded text-lg">
-                    Send
+                  <button className="flex mx-auto text-white bg-gradient-to-r from-fuchsia-600 to-fuchsia-300 ...  border-0 py-2 px-8 focus:outline-none rounded text-lg">
+                    Let's Talk
                   </button>
                 </div>
                 <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
