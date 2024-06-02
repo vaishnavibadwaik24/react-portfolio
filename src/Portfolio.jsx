@@ -46,7 +46,7 @@ export default function portfolio() {
       {/* Header */}
       <header className="text-white body-font">
         <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-          <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+          <a href="/" className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
             <span className="ml-3 text-white text-xl">My Portfolio</span>
           </a>
           <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
@@ -345,7 +345,7 @@ export default function portfolio() {
                   </button>
                 </div>
                 <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
-                  <a className="text-fuchsia-500">vaishnavib2428@gmail.com</a>
+                  <a href="#" className="text-fuchsia-500">vaishnavib2428@gmail.com</a>
                   {/* <p className="leading-normal my-5">49 Smith St.
                         <br />Saint Cloud, MN 56301
                       </p> */}
