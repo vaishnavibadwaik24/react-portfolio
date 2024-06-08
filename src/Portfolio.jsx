@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import resume from "./resume.pdf";
 import view from "./view.png";
 import { TypeAnimation } from "react-type-animation";
@@ -17,7 +17,14 @@ import bootstrap from './bootstrap.svg'
 import tailwind from './tailwind.svg'
 import javascript from './javascript.svg'
 
-export default function portfolio() {
+export default function Portfolio() {
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleToggle = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   const projectsData = [
     {
       title: "ManaliTour",
@@ -47,9 +54,25 @@ export default function portfolio() {
       <header className="text-white body-font">
         <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
           <a href="/" className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-            <span className="ml-3 text-white text-xl">My Portfolio</span>
+            <span className="text-white text-xl">My Portfolio</span>
           </a>
-          <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
+          <button 
+          className="inline-flex items-center md:hidden text-white"
+          onClick={handleToggle}
+        >
+          <svg
+            fill="none"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            className="w-6 h-6"
+            viewBox="0 0 24 24"
+          >
+            <path d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+        <nav className={`md:ml-auto flex flex-wrap items-center text-base justify-center ${isMenuOpen ? '' : 'hidden'} md:flex`}>
             <a href="#Home" className="mr-5 hover:text-fuchsia-500">
               Home
             </a>
@@ -87,7 +110,7 @@ export default function portfolio() {
                 style={{ fontSize: "2rem", color: "#cbd5e1" }}
                 repeat={Infinity}
               />
-              {/* <p className="mb-8 text-2xl text-slate-300 leading-relaxed">Specializing in frontend development.</p> */}
+              
 
               <div className="flex justify-center pt-10">
                 <a
@@ -117,11 +140,9 @@ export default function portfolio() {
       <div id="About" className="section">
         <section className="text-gray-600 body-font bg-fuchsia-950">
           <div className="container mx-auto flex px-5 pt-24 md:flex-row flex-col items-center">
-            {/* <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-15 md:mb-0"> */}
             <h2 class="text-gradient sm:text-3xl text-2xl font-semibold title-font mb-2 md:w-2/5">
               I create websites for your business.
             </h2>
-            {/* </div> */}
             <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
               <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-black">
                 About Me
@@ -150,7 +171,7 @@ export default function portfolio() {
       {/* Work */}
       <section className="bg-fuchsia-950 text-gray-800">
 	<div className="container max-w-5xl px-4 py-12 mx-auto">
-  <h3 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-black mb-4 text-center pb-6">Work Experience</h3>
+  <h3 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-black mb-4 text-center pb-2">Work Experience</h3>
 		<div className="grid gap-4 mx-4 sm:grid-cols-12">
 			<div className="col-span-12 sm:col-span-3">
 				<div className="text-center sm:text-left mb-14 before:block before:w-24 before:h-3 before:mb-5 before:rounded-md before:mx-auto sm:before:mx-0 before:bg-fuchsia-950">
@@ -284,7 +305,7 @@ export default function portfolio() {
       {/* Contact Section */}
       <div id="Contact" className="section">
         <section className="text-gray-600 body-font relative bg-fuchsia-950">
-          <div className="container px-5 py-24 mx-auto">
+          <div className="container px-2 py-24 mx-auto">
             <div className="flex flex-col text-center w-full mb-12">
               <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-black">
                 Contact Us
@@ -346,9 +367,6 @@ export default function portfolio() {
                 </div>
                 <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
                   <a href="#" className="text-fuchsia-500">vaishnavib2428@gmail.com</a>
-                  {/* <p className="leading-normal my-5">49 Smith St.
-                        <br />Saint Cloud, MN 56301
-                      </p> */}
                   <br />
                   <span className="inline-flex pt-8">
                     <a
