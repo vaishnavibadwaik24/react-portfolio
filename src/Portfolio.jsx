@@ -89,13 +89,14 @@ export default function Portfolio() {
   return (
     <>
       {/* Header */}
-      <header className="text-white body-font">
-        <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <header className="text-white body-font bg-gray-900">
+      <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center justify-between">
+        <div className="flex justify-between w-full md:w-auto">
           <a
             href="/"
-            className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
+            className="flex title-font font-medium items-center pl-16"
           >
-            <span><img src={vblogo} style={{width: "60px", height: "60px"}} alt="Logo" /></span>
+            <img src={vblogo} style={{ width: "60px", height: "60px" }} alt="Logo" />
           </a>
           <button
             className="inline-flex items-center md:hidden text-white"
@@ -113,29 +114,30 @@ export default function Portfolio() {
               <path d="M4 6h16M4 12h16m-7 6h7"></path>
             </svg>
           </button>
-          <nav
-            className={`md:ml-auto flex flex-wrap items-center text-base justify-center ${
-              isMenuOpen ? "" : "hidden"
-            } md:flex`}
-          >
-            <a href="#Home" className="mr-5 hover:text-fuchsia-500">
-              Home
-            </a>
-            <a href="#About" className="mr-5 hover:text-fuchsia-500">
-              About
-            </a>
-            <a href="#Skills" className="mr-5 hover:text-fuchsia-500">
-              Skills
-            </a>
-            <a href="#Projects" className="mr-5 hover:text-fuchsia-500">
-              Projects
-            </a>
-            <a href="#Contact" className="mr-5 hover:text-fuchsia-500">
-              Contact
-            </a>
-          </nav>
         </div>
-      </header>
+        <nav
+          className={`w-full md:w-auto md:ml-auto flex flex-wrap items-center text-base justify-center ${
+            isMenuOpen ? "block" : "hidden"
+          } md:flex`}
+        >
+          <a href="#Home" className="mr-5 hover:text-fuchsia-500">
+            Home
+          </a>
+          <a href="#About" className="mr-5 hover:text-fuchsia-500">
+            About
+          </a>
+          <a href="#Skills" className="mr-5 hover:text-fuchsia-500">
+            Skills
+          </a>
+          <a href="#Projects" className="mr-5 hover:text-fuchsia-500">
+            Projects
+          </a>
+          <a href="#Contact" className="mr-3 hover:text-fuchsia-500">
+            Contact
+          </a>
+        </nav>
+      </div>
+    </header>
 
       {/* Landing Page */}
       <div id="Home" className="section">
