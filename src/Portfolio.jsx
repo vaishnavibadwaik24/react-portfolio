@@ -116,7 +116,7 @@ export default function Portfolio() {
           </button>
         </div>
         <nav
-          className={`w-full md:w-auto md:ml-auto flex flex-wrap items-center text-base justify-center ${
+          className={`w-full md:w-auto md:ml-auto flex flex-wrap items-center text-white justify-center ${
             isMenuOpen ? "block" : "hidden"
           } md:flex`}
         >
