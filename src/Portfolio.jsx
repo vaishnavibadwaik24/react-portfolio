@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import resume from "./resume.pdf";
 import view from "./view.png";
 import { TypeAnimation } from "react-type-animation";
@@ -6,15 +7,14 @@ import emailjs from 'emailjs-com';
 
 import g3 from "./images/g3.png";
 import g1 from "./images/g1.png";
-import g2 from "./images/g2.png";
-import g4 from "./images/g4.png";
+import g6 from "./images/g6.png";
 
 import laravel from "./laravel.png";
 import react from "./react.svg";
 import php from "./php.svg";
 import html from "./html.svg";
 import css from "./css.svg";
-import bootstrap from "./bootstrap.svg";
+import bootstrap from "./bootstrap.svg";  
 import tailwind from "./tailwind.svg";
 import javascript from "./javascript.svg";
 
@@ -30,29 +30,6 @@ export default function Portfolio() {
   const handleToggle = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
-  const projectsData = [
-    {
-      title: "ManaliTour",
-      image: g1,
-      link: "https://manali-tour.netlify.app/",
-    },
-    {
-      title: "Whitefalcon Publishing",
-      image: g2,
-      link: "https://whitefalcon.netlify.app/",
-    },
-    {
-      title: "Dine Out | Restro & Cafe",
-      image: g3,
-      link: "https://dine-out-restro.netlify.app/",
-    },
-    {
-      title: "Adilqadri clone",
-      image: g4,
-      link: "https://main--adilqadri-clone.netlify.app/",
-    },
-  ];
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -87,57 +64,61 @@ export default function Portfolio() {
   };
 
   return (
-    <>
+      <>
       {/* Header */}
       <header className="text-white body-font bg-gray-900">
-      <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center justify-between">
-        <div className="flex justify-between w-full md:w-auto">
-          <a
-            href="/"
-            className="flex title-font font-medium items-center pl-16"
-          >
-            <img src={vblogo} style={{ width: "60px", height: "60px" }} alt="Logo" />
-          </a>
-          <button
-            className="inline-flex items-center md:hidden text-white"
-            onClick={handleToggle}
-          >
-            <svg
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              className="w-6 h-6"
-              viewBox="0 0 24 24"
+        <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center justify-between">
+          <div className="flex justify-between w-full md:w-auto">
+            <Link
+              to="/"
+              className="flex title-font font-medium items-center pl-16"
             >
-              <path d="M4 6h16M4 12h16m-7 6h7"></path>
-            </svg>
-          </button>
+              <img
+                src={vblogo}
+                style={{ width: "60px", height: "60px" }}
+                alt="Logo"
+              />
+            </Link>
+            <button
+              className="inline-flex items-center md:hidden text-white"
+              onClick={handleToggle}
+            >
+              <svg
+                fill="none"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                className="w-6 h-6"
+                viewBox="0 0 24 24"
+              >
+                <path d="M4 6h16M4 12h16m-7 6h7"></path>
+              </svg>
+            </button>
+          </div>
+          <nav
+            className={`w-full md:w-auto md:ml-auto flex flex-wrap items-center text-white justify-center ${
+              isMenuOpen ? "block" : "hidden"
+            } md:flex`}
+          >
+            <Link to="/" className="mr-5 hover:text-fuchsia-500">
+              Home
+            </Link>
+            <a href="#About" className="mr-5 hover:text-fuchsia-500">
+              About
+            </a>
+            <a href="#Skills" className="mr-5 hover:text-fuchsia-500">
+              Skills
+            </a>
+            <a href="#Project" className="mr-5 hover:text-fuchsia-500">
+              Projects
+            </a>
+            <a href="#Contact" className="mr-3 hover:text-fuchsia-500">
+              Contact
+            </a>
+          </nav>
         </div>
-        <nav
-          className={`w-full md:w-auto md:ml-auto flex flex-wrap items-center text-white justify-center ${
-            isMenuOpen ? "block" : "hidden"
-          } md:flex`}
-        >
-          <a href="#Home" className="mr-5 hover:text-fuchsia-500">
-            Home
-          </a>
-          <a href="#About" className="mr-5 hover:text-fuchsia-500">
-            About
-          </a>
-          <a href="#Skills" className="mr-5 hover:text-fuchsia-500">
-            Skills
-          </a>
-          <a href="#Projects" className="mr-5 hover:text-fuchsia-500">
-            Projects
-          </a>
-          <a href="#Contact" className="mr-3 hover:text-fuchsia-500">
-            Contact
-          </a>
-        </nav>
-      </div>
-    </header>
+      </header>
 
       {/* Landing Page */}
       <div id="Home" className="section">
@@ -160,7 +141,7 @@ export default function Portfolio() {
 
               <div className="flex justify-center pt-10">
                 <a
-                  href="#Projects"
+                  href="#Project"
                   className="inline-flex text-white bg-gradient-to-r from-fuchsia-600 to-fuchsia-300 ... border-0 py-1 px-6 focus:outline-none  rounded text-lg"
                 >
                   Projects
@@ -266,144 +247,284 @@ export default function Portfolio() {
 
       {/* Skills Section */}
       <div id="Skills" className="section">
-        <section className="text-gray-600 bg-fuchsia-950 body-font">
-          <div className="container px-5 py-24 mx-auto">
-            <div className="text-center mb-20">
-              <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-black mb-4">
-                Technical Skills
-              </h1>
-            </div>
-            <div className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
-              <div className="p-2 sm:w-1/4 w-full">
-                <div className="rounded flex p-4 h-full items-center justify-center transition ease-in duration-500 transform hover:scale-110 shadow-lg shadow-red-500/50 ...">
-                  <img
-                    src={laravel}
-                    style={{ width: "50px", height: "50px" }}
-                    alt="laravel"
-                  />
-                </div>
-              </div>
-              <div className="p-2 sm:w-1/4 w-full">
-                <div className="rounded flex p-4 h-full items-center justify-center transition ease-in duration-500 transform hover:scale-110 shadow-lg shadow-cyan-400/50 ...">
-                  <img
-                    src={react}
-                    style={{ width: "60px", height: "60px" }}
-                    alt="react"
-                  />
-                </div>
-              </div>
-              <div className="p-2 sm:w-1/4 w-full">
-                <div className="rounded flex p-4 h-full items-center justify-center transition ease-in duration-500 transform hover:scale-110 shadow-lg shadow-orange-500/50 ...">
-                  <img
-                    src={html}
-                    style={{ width: "60px", height: "60px" }}
-                    alt="html"
-                  />
-                </div>
-              </div>
-              <div className="p-2 sm:w-1/4 w-full">
-                <div className="rounded flex p-4 h-full items-center justify-center transition ease-in duration-500 transform hover:scale-110 shadow-lg shadow-indigo-500/50 ...">
-                  <img
-                    src={bootstrap}
-                    style={{ width: "70px", height: "70px" }}
-                    alt="bootstrap"
-                  />
-                </div>
+      <section className="text-gray-600 bg-fuchsia-950 body-font">
+        <div className="container px-5 py-24 mx-auto">
+          <div className="text-center mb-20">
+            <h1 className="title-font sm:text-4xl text-3xl mb-4 underline font-bold text-black mb-4">
+              Technical Skills
+            </h1>
+          </div>
+          <div className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
+            <div className="p-2 sm:w-1/4 w-full">
+              <div className="rounded flex p-4 h-full items-center justify-center transition ease-in duration-500 transform hover:scale-110 shadow-lg shadow-red-500/50 relative group">
+                <img
+                  src={laravel}
+                  style={{ width: "50px", height: "50px" }}
+                  alt="laravel"
+                />
+                <span className="absolute bottom-0 mb-2 text-black font-bold text-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                  Laravel
+                </span>
               </div>
             </div>
-            <div className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
-              <div className="p-2 sm:w-1/4 w-full">
-                <div className="rounded flex p-4 h-full items-center justify-center transition ease-in duration-500 transform hover:scale-110 shadow-lg shadow-cyan-300/50 ...">
-                  <img
-                    src={php}
-                    style={{ width: "70px", height: "70px" }}
-                    alt="php"
-                  />
-                </div>
+            <div className="p-2 sm:w-1/4 w-full">
+              <div className="rounded flex p-4 h-full items-center justify-center transition ease-in duration-500 transform hover:scale-110 shadow-lg shadow-cyan-400/50 relative group">
+                <img
+                  src={react}
+                  style={{ width: "60px", height: "60px" }}
+                  alt="react"
+                />
+                <span className="absolute bottom-0 mb-2 text-black font-bold text-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                  React
+                </span>
               </div>
-              <div className="p-2 sm:w-1/4 w-full">
-                <div className="rounded flex p-4 h-full items-center justify-center transition ease-in duration-500 transform hover:scale-110 shadow-lg shadow-yellow-300/50 ...">
-                  <img
-                    src={javascript}
-                    style={{ width: "60px", height: "60px" }}
-                    alt="javascript"
-                  />
-                </div>
+            </div>
+            <div className="p-2 sm:w-1/4 w-full">
+              <div className="rounded flex p-4 h-full items-center justify-center transition ease-in duration-500 transform hover:scale-110 shadow-lg shadow-orange-500/50 relative group">
+                <img
+                  src={html}
+                  style={{ width: "50px", height: "50px" }}
+                  alt="html"
+                />
+                <span className="absolute bottom-0 mb-2 text-black font-bold text-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                  HTML
+                </span>
               </div>
-              <div className="p-2 sm:w-1/4 w-full">
-                <div className="rounded flex p-4 h-full items-center justify-center transition ease-in duration-500 transform hover:scale-110 shadow-lg shadow-blue-500/50 ...">
-                  <img
-                    src={css}
-                    style={{ width: "60px", height: "60px" }}
-                    alt="css"
-                  />
-                </div>
-              </div>
-              <div className="p-2 sm:w-1/4 w-full">
-                <div className="rounded flex p-4 h-full items-center justify-center transition ease-in duration-500 transform hover:scale-110 shadow-lg shadow-cyan-600/50 ...">
-                  <img
-                    src={tailwind}
-                    style={{ width: "60px", height: "60px" }}
-                    alt="tailwind"
-                  />
-                </div>
+            </div>
+            <div className="p-2 sm:w-1/4 w-full">
+              <div className="rounded flex p-4 h-full items-center justify-center transition ease-in duration-500 transform hover:scale-110 shadow-lg shadow-indigo-500/50 relative group">
+                <img
+                  src={bootstrap}
+                  style={{ width: "70px", height: "70px" }}
+                  alt="bootstrap"
+                />
+                <span className="absolute bottom-0 mb-2 text-black font-bold text-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                  Bootstrap
+                </span>
               </div>
             </div>
           </div>
-        </section>
-      </div>
+          <div className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
+            <div className="p-2 sm:w-1/4 w-full">
+              <div className="rounded flex p-4 h-full items-center justify-center transition ease-in duration-500 transform hover:scale-110 shadow-lg shadow-blue-500/50 relative group">
+                <img
+                  src={php}
+                  style={{ width: "70px", height: "70px" }}
+                  alt="php"
+                />
+                <span className="absolute bottom-0 mb-2 text-black font-bold text-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                  PHP
+                </span>
+              </div>
+            </div>
+            <div className="p-2 sm:w-1/4 w-full">
+              <div className="rounded flex p-4 h-full items-center justify-center transition ease-in duration-500 transform hover:scale-110 shadow-lg shadow-yellow-300/50 relative group">
+                <img
+                  src={javascript}
+                  style={{ width: "60px", height: "60px" }}
+                  alt="javascript"
+                />
+                <span className="absolute bottom-0 mb-2 text-black font-bold text-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                  Javascript
+                </span>
+              </div>
+            </div>
+            <div className="p-2 sm:w-1/4 w-full">
+              <div className="rounded flex p-4 h-full items-center justify-center transition ease-in duration-500 transform hover:scale-110 shadow-lg shadow-blue-700/50 relative group">
+                <img
+                  src={css}
+                  style={{ width: "50px", height: "50px" }}
+                  alt="css"
+                />
+                <span className="absolute bottom-0 mb-2 text-black font-bold text-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                  CSS
+                </span>
+              </div>
+            </div>
+            <div className="p-2 sm:w-1/4 w-full">
+              <div className="rounded flex p-4 h-full items-center justify-center transition ease-in duration-500 transform hover:scale-110 shadow-lg shadow-cyan-600/50 relative group">
+                <img
+                  src={tailwind}
+                  style={{ width: "60px", height: "60px" }}
+                  alt="tailwind"
+                />
+                <span className="absolute bottom-0 mb-2 text-black font-bold text-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                  Tailwind
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
 
       {/* Projects Section */}
-      <div id="Projects" className="section">
-        <section className="text-gray-600 body-font bg-fuchsia-950">
-          <div className="container px-5 py-24 mx-auto">
-            <h2 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-black">
-              Recent Projects
-            </h2>
-            <div className="flex flex-wrap -mx-4">
-              {projectsData.map((project, index) => (
-                <div className="p-4 md:w-1/3" key={index}>
-                  <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-                    <img
-                      className="lg:h-48 md:h-36 w-full object-cover object-center transition ease-in-out duration-300 transform hover:scale-105"
-                      src={project.image}
-                      alt={project.title}
-                    />
-                    <div className="p-6">
-                      <h2 className="text-2xl font-medium text-slate-300 title-font mb-4">
-                        {project.title}
-                      </h2>
-                      <div className="flex items-center flex-wrap">
-                        <button className="flex mx-auto text-black bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 ...  border-0 py-2 px-8 focus:outline-none rounded-full text-lg">
-                          <a
-                            href={project.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-black inline-flex items-center md:mb-2 lg:mb-0"
-                          >
-                            Demo
-                            <svg
-                              fill="none"
-                              stroke="currentColor"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              className="w-4 h-4 ml-2"
-                              viewBox="0 0 24 24"
-                            >
-                              <path d="M5 12h14M12 5l7 7-7 7" />
-                            </svg>
-                          </a>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
+      <div id="Project" className="text-gray-600 body-font bg-fuchsia-950">
+      <h2 className="text-4xl font-bold underline text-black tracking-wide pt-16 ml-8">
+        Check my Projects
+      </h2>
+      <div className="container px-5 py-16 mx-auto">
+        <div className="flex flex-wrap -m-4">
+          {/* Card 1 */}
+          <div className="p-4 md:w-1/4">
+            <div className="h-full border-opacity-60 rounded-lg overflow-hidden">
+              <img
+                className="lg:h-48 md:h-36 object-cover object-center transition duration-300 transform hover:shadow-2xl hover:border-4 hover:border-white"
+                style={{ width: "100%" }}
+                src={g6}
+                alt="Image"
+              />
+              <div className="p-6 pt-6">
+                <h1 className="text-fuchsia-300 title-font text-lg font-bold mb-3">
+                  NextGen UX
+                </h1>
+                <p className="text-slate-300 leading-relaxed mb-3">
+                NextGen UX is a responsive website, an academy offering UI/UX design
+                training. Designed intuitive, user-centered pages.
+                </p>
+                <div className="flex items-center flex-wrap">
+                  <a
+                    href="https://next-gen-ux.netlify.app/"
+                    target="_blank"
+                    className="font-medium inline-flex items-center text-lime-500 md:mb-2 lg:mb-0"
+                  >
+                    Demo
+                    <svg
+                      className="w-4 h-4 ml-2"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      fill="none"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
-        </section>
+          {/* Card 2 */}
+          <div className="p-4 md:w-1/4">
+            <div className="h-full border-opacity-60 rounded-lg overflow-hidden">
+              <img
+                className="lg:h-48 md:h-36 object-cover object-center transition duration-300 transform hover:shadow-2xl hover:border-4 hover:border-white"
+                src={g1}
+                alt="Images"
+              />
+              <div className="p-6">
+                <h1 className="title-font text-lg font-bold text-fuchsia-300 mb-3">
+                  ManaliTour
+                </h1>
+                <p className="text-slate-300 leading-relaxed mb-3">
+                  ManaliTour is a sleek landing page, developed using Tailwind
+                  CSS and HTML for a modern look.
+                </p>
+                <div className="flex items-center flex-wrap">
+                  <a
+                    href="https://manali-tour.netlify.app/"
+                    target="_blank"
+                    className="text-yellow-400 font-medium inline-flex items-center md:mb-2 lg:mb-0"
+                  >
+                    Demo
+                    <svg
+                      className="w-4 h-4 ml-2"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      fill="none"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* Card 3 */}
+          <div className="p-4 md:w-1/4">
+            <div className="h-full border-opacity-60 rounded-lg overflow-hidden">
+              <img
+                className="lg:h-48 md:h-36 object-cover object-center transition duration-300 transform hover:shadow-2xl hover:border-4 hover:border-white"
+                src={g3}
+                alt="Images"
+              />
+              <div className="p-6">
+                <h1 className="title-font text-lg font-bold text-fuchsia-300 mb-3">
+                  Dine Out | Restro & Cafe
+                </h1>
+                <p className="text-slate-300 leading-relaxed mb-3">
+                  Dine Out | Restro & Cafe is a landing page. Developed using
+                  Bootstrap, Tailwind CSS and HTML.
+                </p>
+                <div className="flex items-center flex-wrap">
+                  <a
+                    href="https://dine-out-restro.netlify.app/"
+                    target="_blank"
+                    className="text-red-500 font-medium inline-flex items-center md:mb-2 lg:mb-0"
+                  >
+                    Demo
+                    <svg
+                      className="w-4 h-4 ml-2"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      fill="none"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* Card 4 */}
+          <div className="p-4 md:w-1/4 text-center">
+            <div
+              className="h-full bg-cyan-950 rounded-lg overflow-hidden py-16 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 ..."
+            >
+              <div className="p-6">
+                <h1 className="title-font text-3xl font-bold text-white mb-6">
+                  Discover all my Projects
+                </h1>
+                <p className="leading-relaxed text-white text-lg mb-6">
+                  I am a Web Developer who loves to create websites.
+                </p>
+                <div className="flex items-center justify-center flex-wrap">
+                <Link
+  to="/projects"
+  className="text-white font-medium inline-flex items-center md:mb-2 lg:mb-0"
+>
+  More
+  <svg
+    className="w-4 h-4 ml-2"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    strokeWidth="2"
+    fill="none"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M5 12h14"></path>
+    <path d="M12 5l7 7-7 7"></path>
+  </svg>
+</Link>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
 
       {/* Contact Section */}
       <div id="Contact" className="section">
@@ -535,6 +656,6 @@ export default function Portfolio() {
           </div>
         </section>
       </div>
-    </>
+      </>
   );
 }
