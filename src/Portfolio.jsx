@@ -10,13 +10,13 @@ import g1 from "./images/g1.png";
 import g6 from "./images/g6.png";
 
 import laravel from "./laravel.png";
-import react from "./react.svg";
+// import react from "./react.svg";
 import php from "./php.svg";
 import html from "./html.svg";
 import css from "./css.svg";
 import bootstrap from "./bootstrap.svg";  
 import tailwind from "./tailwind.svg";
-import javascript from "./javascript.svg";
+// import javascript from "./javascript.svg";
 
 import vblogo from './vblogo.png'
 
@@ -236,7 +236,7 @@ export default function Portfolio() {
                   </p>
                   <p className="text-slate-300">
                     Hands-on experience in developing dynamic and responsive web{" "}
-                    <br /> applications using React.
+                    <br /> applications.
                   </p>
                 </div>
               </div>
@@ -247,116 +247,97 @@ export default function Portfolio() {
 
       {/* Skills Section */}
       <div id="Skills" className="section">
-      <section className="text-gray-600 bg-fuchsia-950 body-font">
-        <div className="container px-5 py-24 mx-auto">
-          <div className="text-center mb-20">
-            <h1 className="title-font sm:text-4xl text-3xl mb-4 underline font-bold text-black mb-4">
-              Technical Skills
-            </h1>
-          </div>
-          <div className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
-            <div className="p-2 sm:w-1/4 w-full">
-              <div className="rounded flex p-4 h-full items-center justify-center transition ease-in duration-500 transform hover:scale-110 shadow-lg shadow-red-500/50 relative group">
-                <img
-                  src={laravel}
-                  style={{ width: "50px", height: "50px" }}
-                  alt="laravel"
-                />
-                <span className="absolute bottom-0 mb-2 text-black font-bold text-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                  Laravel
-                </span>
-              </div>
-            </div>
-            <div className="p-2 sm:w-1/4 w-full">
-              <div className="rounded flex p-4 h-full items-center justify-center transition ease-in duration-500 transform hover:scale-110 shadow-lg shadow-cyan-400/50 relative group">
-                <img
-                  src={react}
-                  style={{ width: "60px", height: "60px" }}
-                  alt="react"
-                />
-                <span className="absolute bottom-0 mb-2 text-black font-bold text-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                  React
-                </span>
-              </div>
-            </div>
-            <div className="p-2 sm:w-1/4 w-full">
-              <div className="rounded flex p-4 h-full items-center justify-center transition ease-in duration-500 transform hover:scale-110 shadow-lg shadow-orange-500/50 relative group">
-                <img
-                  src={html}
-                  style={{ width: "50px", height: "50px" }}
-                  alt="html"
-                />
-                <span className="absolute bottom-0 mb-2 text-black font-bold text-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                  HTML
-                </span>
-              </div>
-            </div>
-            <div className="p-2 sm:w-1/4 w-full">
-              <div className="rounded flex p-4 h-full items-center justify-center transition ease-in duration-500 transform hover:scale-110 shadow-lg shadow-indigo-500/50 relative group">
-                <img
-                  src={bootstrap}
-                  style={{ width: "70px", height: "70px" }}
-                  alt="bootstrap"
-                />
-                <span className="absolute bottom-0 mb-2 text-black font-bold text-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                  Bootstrap
-                </span>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
-            <div className="p-2 sm:w-1/4 w-full">
-              <div className="rounded flex p-4 h-full items-center justify-center transition ease-in duration-500 transform hover:scale-110 shadow-lg shadow-blue-500/50 relative group">
-                <img
-                  src={php}
-                  style={{ width: "70px", height: "70px" }}
-                  alt="php"
-                />
-                <span className="absolute bottom-0 mb-2 text-black font-bold text-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                  PHP
-                </span>
-              </div>
-            </div>
-            <div className="p-2 sm:w-1/4 w-full">
-              <div className="rounded flex p-4 h-full items-center justify-center transition ease-in duration-500 transform hover:scale-110 shadow-lg shadow-yellow-300/50 relative group">
-                <img
-                  src={javascript}
-                  style={{ width: "60px", height: "60px" }}
-                  alt="javascript"
-                />
-                <span className="absolute bottom-0 mb-2 text-black font-bold text-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                  Javascript
-                </span>
-              </div>
-            </div>
-            <div className="p-2 sm:w-1/4 w-full">
-              <div className="rounded flex p-4 h-full items-center justify-center transition ease-in duration-500 transform hover:scale-110 shadow-lg shadow-blue-700/50 relative group">
-                <img
-                  src={css}
-                  style={{ width: "50px", height: "50px" }}
-                  alt="css"
-                />
-                <span className="absolute bottom-0 mb-2 text-black font-bold text-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                  CSS
-                </span>
-              </div>
-            </div>
-            <div className="p-2 sm:w-1/4 w-full">
-              <div className="rounded flex p-4 h-full items-center justify-center transition ease-in duration-500 transform hover:scale-110 shadow-lg shadow-cyan-600/50 relative group">
-                <img
-                  src={tailwind}
-                  style={{ width: "60px", height: "60px" }}
-                  alt="tailwind"
-                />
-                <span className="absolute bottom-0 mb-2 text-black font-bold text-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                  Tailwind
-                </span>
-              </div>
-            </div>
+  <section className="text-gray-600 bg-fuchsia-950 body-font">
+    <div className="container px-24 py-24 mx-auto">
+      <div className="text-center mb-20">
+        <h1 className="title-font sm:text-4xl text-3xl mb-4 underline font-bold text-black">
+          Technical Skills
+        </h1>
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="p-2">
+          <div className="rounded flex p-4 h-full items-center justify-center transition ease-in duration-500 transform hover:scale-110 shadow-lg shadow-red-500/50 relative group">
+            <img
+              src={laravel}
+              style={{ width: "50px", height: "50px" }}
+              alt="laravel"
+            />
+            <span className="absolute bottom-0 mb-2 text-black font-bold text-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+              Laravel
+            </span>
           </div>
         </div>
-      </section>
+
+        <div className="p-2">
+          <div className="rounded flex p-4 h-full items-center justify-center transition ease-in duration-500 transform hover:scale-110 shadow-lg shadow-orange-500/50 relative group">
+            <img
+              src={html}
+              style={{ width: "50px", height: "50px" }}
+              alt="html"
+            />
+            <span className="absolute bottom-0 mb-2 text-black font-bold text-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+              HTML
+            </span>
+          </div>
+        </div>
+
+        <div className="p-2">
+          <div className="rounded flex p-4 h-full items-center justify-center transition ease-in duration-500 transform hover:scale-110 shadow-lg shadow-indigo-500/50 relative group">
+            <img
+              src={bootstrap}
+              style={{ width: "70px", height: "70px" }}
+              alt="bootstrap"
+            />
+            <span className="absolute bottom-0 mb-2 text-black font-bold text-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+              Bootstrap
+            </span>
+          </div>
+        </div>
+
+        <div className="p-2">
+          <div className="rounded flex p-4 h-full items-center justify-center transition ease-in duration-500 transform hover:scale-110 shadow-lg shadow-blue-500/50 relative group">
+            <img
+              src={php}
+              style={{ width: "70px", height: "70px" }}
+              alt="php"
+            />
+            <span className="absolute bottom-0 mb-2 text-black font-bold text-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+              PHP
+            </span>
+          </div>
+        </div>
+
+        <div className="p-2">
+          <div className="rounded flex p-4 h-full items-center justify-center transition ease-in duration-500 transform hover:scale-110 shadow-lg shadow-blue-700/50 relative group">
+            <img
+              src={css}
+              style={{ width: "50px", height: "50px" }}
+              alt="css"
+            />
+            <span className="absolute bottom-0 mb-2 text-black font-bold text-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+              CSS
+            </span>
+          </div>
+        </div>
+
+        <div className="p-2">
+          <div className="rounded flex p-4 h-full items-center justify-center transition ease-in duration-500 transform hover:scale-110 shadow-lg shadow-cyan-600/50 relative group">
+            <img
+              src={tailwind}
+              style={{ width: "60px", height: "60px" }}
+              alt="tailwind"
+            />
+            <span className="absolute bottom-0 mb-2 text-black font-bold text-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+              Tailwind
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
+</div>
+
+
 
       {/* Projects Section */}
       <div id="Project" className="text-gray-600 body-font bg-fuchsia-950">
