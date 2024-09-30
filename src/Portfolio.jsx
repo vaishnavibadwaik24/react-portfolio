@@ -10,13 +10,13 @@ import g1 from "./images/g1.png";
 import g6 from "./images/g6.png";
 
 import laravel from "./laravel.png";
-// import react from "./react.svg";
+import react from "./react.svg";
 import php from "./php.svg";
 import html from "./html.svg";
 import css from "./css.svg";
 import bootstrap from "./bootstrap.svg";  
 import tailwind from "./tailwind.svg";
-// import javascript from "./javascript.svg";
+import javascript from "./javascript.svg";
 
 import vblogo from './vblogo.png'
 
@@ -186,7 +186,7 @@ export default function Portfolio() {
                 computer science.
               </p>
               <div className="flex md:mt-4 mt-6">
-                <a href={resume} target="_blank" rel="noopener noreferrer">
+                <a href={resume} target="_blank" rel="Resume">
                   <div className="inline-flex items-center text-white border-0 px-5 focus:outline-none rounded bg-gradient-to-r from-fuchsia-600 to-fuchsia-300 ... ">
                     <div
                       style={{ width: "50px", height: "40px" }}
@@ -254,7 +254,7 @@ export default function Portfolio() {
           Technical Skills
         </h1>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
         <div className="p-2">
           <div className="rounded flex p-4 h-full items-center justify-center transition ease-in duration-500 transform hover:scale-110 shadow-lg shadow-red-500/50 relative group">
             <img
@@ -285,11 +285,24 @@ export default function Portfolio() {
           <div className="rounded flex p-4 h-full items-center justify-center transition ease-in duration-500 transform hover:scale-110 shadow-lg shadow-indigo-500/50 relative group">
             <img
               src={bootstrap}
-              style={{ width: "70px", height: "70px" }}
+              style={{ width: "60px", height: "60px" }}
               alt="bootstrap"
             />
             <span className="absolute bottom-0 mb-2 text-black font-bold text-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100">
               Bootstrap
+            </span>
+          </div>
+        </div>
+
+        <div className="p-2">
+          <div className="rounded flex p-4 h-full items-center justify-center transition ease-in duration-500 transform hover:scale-110 shadow-lg shadow-yellow-300/50 relative group">
+            <img
+              src={javascript}
+              style={{ width: "50px", height: "50px" }}
+              alt="bootstrap"
+            />
+            <span className="absolute bottom-0 mb-2 text-black font-bold text-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+              JavaScript
             </span>
           </div>
         </div>
@@ -329,6 +342,19 @@ export default function Portfolio() {
             />
             <span className="absolute bottom-0 mb-2 text-black font-bold text-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100">
               Tailwind
+            </span>
+          </div>
+        </div>
+
+        <div className="p-2">
+          <div className="rounded flex p-4 h-full items-center justify-center transition ease-in duration-500 transform hover:scale-110 shadow-lg shadow-cyan-400/50 relative group">
+            <img
+              src={react}
+              style={{ width: "50px", height: "50px" }}
+              alt="tailwind"
+            />
+            <span className="absolute bottom-0 mb-2 text-black font-bold text-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+              React
             </span>
           </div>
         </div>
